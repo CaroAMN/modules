@@ -4,17 +4,12 @@ nextflow_process {
     name "Test Process MICROSAM"
     script "../main.nf"
     process "MICROSAM"
+    config "./microsam-test.config"
 
     tag "modules"
     tag "modules_nfcore"
     tag "microsam"
-
-    config {
-        process {
-            container = "microsam_biocon:latest"
-        }
-    }    
-
+  
     test("segmentation nuclear - tif") {
 
         when {
